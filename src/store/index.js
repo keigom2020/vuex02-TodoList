@@ -1,30 +1,31 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
+import Vue from "vue";
+import Vuex from "vuex";
+Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     todos: [],
-    uid: 0,
+    uid: 0
   },
   getters: {
     filteredTodos: state => state.todos
   },
   mutations: {
-		addTodo(state, todoTitle) {
-			const newTodo = todoTitle && todoTitle.trim();
-			if (!newTodo) {
-				return;
-			}
-			state.todos.push({
-				id: state.uid++,
-				title: newTodo,
-				completed: false
-			});
-		}
-  },
-  actions: {},
-  
-  modules: {}
-})
+    addTodo(state, todoTitle) {
+      const newTodo = todoTitle && todoTitle.trim();
+      if (!newTodo) {
+        return;
+      }
+      state.todos.push({
+        id: state.uid++,
+        title: newTodo,
+        completed: false
+      });
+    },
+    removeTodo(state, todo) {
+      state.todos = state.todos.filter(item => item !== todo);
+    },
+    done(state, { todo, completed }) {
+      todo.completed = completed;
+    }
+  }
+});

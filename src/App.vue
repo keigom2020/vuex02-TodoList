@@ -2,22 +2,23 @@
   <section id="app" class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <TodoInput />
+      <todo-input/>
     </header>
-    <TodoList />
+    <todo-list/>
   </section>
 </template>
 
 <script>
+import store from "./store";
 import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
-
 export default {
   name: "app",
+  store,
   components: {
     TodoInput,
     TodoList
-  },
+  }
 };
 </script>
 

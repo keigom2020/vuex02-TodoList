@@ -1,11 +1,11 @@
 <template>
   <input
     v-model="newTodo"
-		class="new-todo" 
-    autofocus 
+    class="new-todo"
+    autofocus
     autocomplete="off"
-		placeholder="What needs to be done?"
-		@keypress.enter="addTodo"
+    placeholder="What needs to be done?"
+    @keypress.enter="addTodo"
   >
 </template>
 
@@ -20,7 +20,7 @@ export default {
   methods: {
     addTodo() {
       this.$store.commit("addTodo", this.newTodo);
-      this.newTodo = ''
+      this.newTodo = "";
     }
   }
 };
