@@ -1,6 +1,7 @@
 <template>
   <section class="main" v-show="todos.length" v-cloak>
-    <input class="toggle-all" type="checkbox">
+    <input
+     class="toggle-all" type="checkbox">
     <ul class="todo-list">
       <li
         v-for="todo in filteredTodos"

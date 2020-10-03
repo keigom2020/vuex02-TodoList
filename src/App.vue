@@ -2,9 +2,10 @@
   <section id="app" class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <todo-input/>
+      <TodoInput/>
     </header>
-    <todo-list/>
+    <TodoList/>
+    <TodoController />
   </section>
 </template>
 
@@ -12,13 +13,21 @@
 import store from "./store";
 import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
+import TodoController from "./components/TodoController.vue";
+
 export default {
   name: "app",
-  store,
   components: {
     TodoInput,
-    TodoList
-  }
+    TodoList,
+    TodoController,
+  },
+  mounted() {
+		store.watch(
+			(state, getters) => state.todos,
+			(newValue, oldValue) => store.commit('save')
+		);
+	}
 };
 </script>
 
