@@ -1,11 +1,11 @@
 <template>
 	<footer
 	  class="footer"
-		v-show="todos.length" 
+		v-show="todos.length"
 		v-cloak>
 		<span class="todo-count">
 			<strong>{{remaining}}</strong>
-			 {{remaining | pluralize}} left
+			{{remaining | pluralize}} left
 		</span>
 	</footer>
 </template>

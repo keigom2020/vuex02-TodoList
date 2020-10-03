@@ -1,5 +1,8 @@
 # vuex02
 
+## 参考URL
+http://www.fumiononaka.com/Business/html5/FN1909004.html
+
 ## Project setup
 ```
 npm install
