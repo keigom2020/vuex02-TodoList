@@ -1,5 +1,9 @@
 <template>
-  <section class="main" v-show="todos.length" v-cloak>
+  <section 
+    class="main" 
+    v-show="todos.length" 
+    v-cloak
+  >
     <input
      class="toggle-all" type="checkbox">
     <ul class="todo-list">
